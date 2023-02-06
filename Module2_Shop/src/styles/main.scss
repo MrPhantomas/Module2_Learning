@@ -141,7 +141,7 @@ body {
         color: $green;
         text-align: left;
         &:hover {
-            .main__line .main__btn {
+            .main__btn {
                 &::before {
                     background-color: $orange;
                     box-shadow: 0 0 0 4px $white, 0 0 0 5px $orange;
