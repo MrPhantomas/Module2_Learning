@@ -392,6 +392,8 @@ body {
     background-image: url(../images/about.png);
     padding-top: 5.8rem;
     padding-bottom: 14.5rem;
+    background-repeat: no-repeat;
+    background-size: cover;
     &__box {
         display: flex;
         justify-content: space-between;
