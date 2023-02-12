@@ -255,19 +255,21 @@ body {
 
 .link {
     color: $white;
+    letter-spacing: 0.13rem;
     text-transform: uppercase;
     background-color: $orange;
-    box-shadow: 0rem 1rem 1.1rem .2rem rgba(207, 92, 13, 0.2);
     text-decoration: none;
     border-radius: 3.8rem;
     display: inline-block;
     &_size-s {
         font-size: 1.4rem;
-        padding: 2.3rem 3.6rem;
+        padding: 2rem 3.4rem;
+        box-shadow: 0rem 1rem 1.1rem .17rem rgba(207, 92, 13, 0.15);
     }
     &_size-m {
         font-size: 1.6rem;
-        padding: 2.5rem 4.2rem;
+        padding: 2.4rem 4.3rem;
+        box-shadow: 0rem 1rem 1.1rem .2rem rgba(207, 92, 13, 0.2);
     }
 }
 
@@ -291,30 +293,22 @@ body {
 
 .swiper {
     overflow: initial;
-    &_height-s {
-        .swiper-slide{
-            height: 520px;
-        }
-    }
-    &_height-m {
-        .swiper-slide{
-            height: 683px;
-        }
-    }
     &-slide {
         border: 1px solid rgba($green, .4);
         border-radius: 2rem;
-        padding: 4rem 3.7rem;
+        padding: 3rem 3.7rem 3.8rem;
         box-sizing: border-box;
-        display: flex;
-        flex-direction: column;
         justify-content:space-between;
         background-repeat: no-repeat;
         background-size: cover;
         position: relative;
         z-index: 0;
         &_white {
+            height: 520px;
+            display: flex;
+            flex-direction: column;
             justify-content: flex-end;
+            padding: 4rem 3.7rem; 
             &:hover {
                 .swiper-slide__hover {
                     height: 233px;
@@ -385,20 +379,28 @@ body {
         &__description {
             font-size: 1.8rem;
             color: rgba($green, 0.7);
+            margin-top: 2rem;
+            margin-bottom: 0;
+            min-height: 55px;
+            max-width: 300px;
+            line-height: 1.5;
         }
         &__price {
             font-size: 2.4rem;
-            margin-bottom: 32px;
+            margin-bottom: 3rem;
         }
         &__cover {
             position: relative;
             overflow: hidden;
             width: 100%;
-            height: 293px;
+            height: 322px;
             text-align: center;
         }
         &__image {
-            height: 90%;
+            width: 100%;
+            max-width: 351px;
+            height: 100%;
+            object-fit: contain;
         }
         &__footer {
             display: flex;
@@ -436,15 +438,15 @@ body {
         cursor: pointer;
         background-color: transparent;
         padding: 0;
-        border: none;
         background-position: center center;
+        border: none;
     }
     &__minus {
         pointer-events: none;
-        opacity: .4;
         background-image: url(../images/minus.svg); 
         background-size: cover; 
-        background-repeat: no-repeat;  
+        background-repeat: no-repeat; 
+        opacity: .4; 
     } 
     &__plus {
         background-image: url(../images/plus.svg); 
@@ -553,6 +555,32 @@ body {
     }
 }
 
+.category {
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    gap: 2rem;
+    &__item {
+        flex-basis: 230px;
+        text-align: center;
+    }
+    &__link {
+        padding: 2.4rem 0;
+        border: 1px solid rgba($green, .5);
+        color: rgba($green, .5);
+        font-size: 1.8rem;
+        text-decoration: none;
+        border-radius: 4rem;
+        display: block;
+        &:hover {
+            border: 1px solid $orange;
+            color: $orange;
+        }
+    }
+}
+
 .catalog {
     background-image: url(../images/catalog.png);
     background-size: cover;
@@ -562,77 +590,56 @@ body {
         margin-top: 3rem;
         margin-bottom: 9rem;
     }
-    &__nav {
-        display: flex;
-        gap: 10px;
-        font-size: 1.8rem;
-        list-style-type: none;
-        padding: 0;
-        margin: 0;
+    &__list {
         margin-bottom: 5rem;
-        &__item {
-            width: 228px;
-            height: 68px;
-            border: 1px solid $green;
-            border-radius: 39px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            opacity: .5;
-            cursor: pointer;
-            &:hover {
-                border-color: $orange;
-                color: $orange;
-                opacity: 1;
-            }
-        }
     }
-    &__grid {
+    &-grid {
         display: grid;
-        grid-template-areas: "a b c d";
+        grid-template-columns: repeat(4, 1fr);
         padding: 0;
         gap: 20px;
         &__item {
-            box-sizing: border-box;
-            max-width: 343px;
-            height: 513px;
-            padding: 3.9rem 2.9rem;
-            margin: 0;
             border: 1px solid rgba($green, .4);
-            border-radius: 19px;
-            display: flex;
-            flex-direction: column;
-            justify-content: end;
+            border-radius: 2rem;
+            padding: 2.7rem 3rem 3.8rem;
+            box-sizing: border-box;
             &:hover {
                 box-shadow: 0 0 0 2px rgba($green, .4) inset;
             }
+        }
+        &__cover {
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+            height: 204px;
+            text-align: center;
+        }
+        &__image {
+            height: 100%;
+            max-width: 351px;
+            height: 100%;
+            object-fit: contain;
         }
         &__title {
             font-family: $font-cormorant;
             font-size: 3rem;
             color: $green;
+            margin-top: 1.7rem;
             margin-bottom: 0rem;
         }
         &__description {
             font-size: 1.6rem;
             color: rgba($green, 0.7);
-            margin-bottom: 24px;
-            max-width: 237px;
+            margin-top: 1.8rem;
+            margin-bottom: 0;
+            min-height: 61px;
+            max-width: 300px;
+            line-height: 1.5;
         }
         &__price {
             font-size: 2.4rem;
-            margin-bottom: 32px;
-        }
-        &__cover {
-            position: relative;
-            width: 100%;
-            height: 217px;
-            text-align: center;
-            overflow: hidden;
-        }
-        &__image {
-            height: 90%;
+            margin-bottom: 3rem;
+            margin-top: 0;
         }
         &__footer {
             display: flex;
@@ -641,7 +648,7 @@ body {
         }
     }
     &__load {
-        margin-top: 60px;
+        margin-top: 6rem;
         display: flex;
         justify-content: center;
         &__btn {
