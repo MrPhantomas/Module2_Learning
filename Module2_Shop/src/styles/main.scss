@@ -262,6 +262,7 @@ body {
     border-radius: 3.8rem;
     display: inline-block;
     border: none;
+    cursor: pointer;
     &_size-s {
         font-size: 1.4rem;
         padding: 2rem 3.4rem;
@@ -679,9 +680,73 @@ body {
     }
 }
 
+.delivery {
+    background-image: url(../images/delivery.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding-top: 2rem;
+    padding-bottom: 14rem;
+    &__block {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 8rem;
+    }
+    &__text {
+        max-width: 570px;
+        margin-left: 12.2rem;
+    }
+    &__box {
+        max-width: 475px;
+    }
+    &__logos {
+        display: flex;
+        list-style-type: none;
+        margin: 5rem 0 0 0;
+        padding-left: 0;
+        gap: 2.9rem;
+        &-item{
+            background-size: cover;
+            background-repeat: no-repeat;
+            opacity: .4;
+            &:hover {
+                opacity: 1; 
+            }
+            &:nth-child(1) {
+                background-image: url(../images/mastercard.svg);
+                height: 35px;
+                width: 58px;
+            }
+            &:nth-child(2) {
+                background-image: url(../images/visa.svg);
+                height: 27px;
+                width: 91px;
+            }
+            &:nth-child(3) {
+                background-image: url(../images/paypal.svg);
+                height: 33px;
+                width: 125px;
+            }
+        }
+    }
+    &__description {
+        margin-bottom: 4.5rem;
+    }
+    &__link {
+        color: $green;
+        text-decoration: none;
+        border-bottom: 1px solid #74776b;
+    }
+    &__span {
+        color: $orange;
+    }
+}
+
 .contact {
-    padding-top: 100px;
-    padding-bottom: 100px;
+    background-image: url(../images/contact.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding-top: 65px;
+    padding-bottom: 160px;
     &-box {
         display: flex;
         align-items: center;
@@ -689,9 +754,47 @@ body {
         &__text {
             max-width: 400px;
             flex-grow: 1;
+            margin:6.2rem 0 0 12rem;
         }
         &__form {
             flex-basis: 589px;
+        }
+    }
+    &__contacts {
+        margin: 6rem 0 0 0;
+        padding: 0;
+        list-style-type: none;
+        font-size: 2.4rem;
+        &-item{
+            display: flex;
+            gap: 2rem;
+            margin-bottom: 2.1rem;
+            &__link {
+                text-decoration: none;
+                color: $green;
+                &:hover {
+                    color: $orange;
+                }
+            }
+            &::before {
+                content: '';
+                background-size: cover;
+                background-repeat: no-repeat;
+            }
+            &:nth-child(1) {
+                &::before {
+                    background-image: url(../images/phone.svg);
+                    height: 28px;
+                    width: 29px;
+                }
+            }
+            &:nth-child(2) {
+                &::before {
+                    background-image: url(../images/mail.svg);
+                    height: 28px;
+                    width: 29px;
+                }
+            }
         }
     }
 }
@@ -738,7 +841,7 @@ body {
     &__docs {
         color: rgba($green, .6);
         text-decoration: none;
-        border-bottom: 1px #ecedec;
+        border-bottom: 2px solid #ecedec;
     }
     &__link {
         margin-top: 1.2rem;
