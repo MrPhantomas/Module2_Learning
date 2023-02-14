@@ -78,8 +78,14 @@ body {
     background-image: url(../images/logo.svg);
     background-repeat: no-repeat;
     background-size: contain;
-    width: 12.3rem;
-    height: 3.2rem;
+    &_min {
+        width: 12.3rem;
+        height: 3.2rem;
+    }
+    &_med {
+        width: 18rem;
+        height: 5rem;
+    }
 }
 
 .container {
@@ -861,6 +867,102 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     &__box {
+        padding-top: 8rem;
+    }
+    &__menu {
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+    }
+    &__list {
+        font-size: 1.8rem;
+        margin: 0;
+        padding: 0;
+    }
+    &__item {
+        list-style-type: none;
+        margin-bottom: 3.4rem;
+        &_nav {
+            &:hover {
+                color: $orange;
+            }
+        }
+    }
+    &__link {
+        line-height: 1.5;
+        text-decoration: none;
+        color: $green;
+        &:hover {
+            color: $orange;
+        }    
+    }
+    &__tel {
+        margin-bottom: 4rem;
+        font-size: 2.7rem;
+        text-decoration: none;
+        color: $green;
+        display: block;
+    }
+    &__mail {
+        margin-bottom: 3.4rem;
+        font-size: 1.8rem;
+        text-decoration: none;
+        color: $green;
+        display: block;
+    }
+    &-social {
+        display: flex;
+        padding: 0;
+        margin: 0;
+        justify-content: space-between;
+        gap: 3rem;
+        list-style-type: none;
+        &__link {
+            width: calc(5rem - 2px);
+            height: calc(5rem - 2px);
+            display: block;
+            border: 1px solid $green;
+            border-radius: 100%;
+            background-position: center center;
+            background-repeat: no-repeat;
+            opacity: .8;
+            &:hover {
+                opacity: 1;  
+            }
+        }
+        &__vk {
+            background-image: url(../images/vk.svg);
+            background-size: 24px;
+        }
+        &__inst {
+            background-image: url(../images/instagram.svg);
+            background-size: 18px;
+        }
+        &__fb {
+            background-image: url(../images/facebook.svg);
+            background-size: 18px;
+        }
 
+    }
+    &__text {
+        padding-top: 5rem;
+        padding-bottom: 85px;
+        display: flex;
+        justify-content: space-between;
+    }
+    &__copy {
+        padding: 0;
+        margin: 0;
+    }
+    &__author {
+        padding: 0;
+        margin: 0;
+        color: rgba($green, .6);
+        text-decoration: none;
+        &:hover {
+            .footer__author__span {
+                color: $green;
+            }    
+        } 
     }
 }
