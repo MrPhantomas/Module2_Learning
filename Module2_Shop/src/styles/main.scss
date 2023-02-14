@@ -736,7 +736,6 @@ body {
     &__link {
         color: $green;
         text-decoration: none;
-        //border-bottom: 1px solid #74776b;
         position: relative;
         &::after {
             content: '';
@@ -754,9 +753,6 @@ body {
 }
 
 .contact {
-    background-image: url(../images/contact.png);
-    background-size: cover;
-    background-repeat: no-repeat;
     padding-top: 65px;
     padding-bottom: 160px;
     &-box {
@@ -857,5 +853,14 @@ body {
     }
     &__link {
         margin-top: 1.2rem;
+    }
+}
+
+.footer {
+    background-image: url(../images/footer.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    &__box {
+
     }
 }
