@@ -5,10 +5,25 @@ $font-cormorant: 'Cormorant', serif;
 
 $green: #27300f;
 $orange: #d26a22;
-$darkk-orange: #cf5c0d;
+$dark-orange: #cf5c0d;
 $white: #fff;
 
 $std-delay: .2s;
+
+$r_minmob: 320px;
+$r_mob_360: 360px;
+$r_mob_400: 400px;
+$r_mob_500: 500px;
+$r_mob_600: 600px;
+$r_tab: 768px;
+$r_tab_900: 900px;
+$r_desc: 1000px;
+$r_desc_1120: 1120px;
+$r_desc_hd: 1200px;
+$r_desc_1280: 1280px;
+$r_desc_1350: 1350px;
+$r_desc_1470: 1470px;
+$r_desc_full_1750: 1750px;
 
 html {
     font-size: 10px;
@@ -16,12 +31,15 @@ html {
 
 body {
     font-size: 1.6rem;
+    @media(max-width: $r_desc_1280) {
+        font-size: 1.4rem;
+    } 
     font-family: $font-jost;
     color: $green;
     background-image: url(../images/background.png);
     background-size: cover;
     background-repeat: no-repeat;
-    background-position-x: center;
+    overflow-x: hidden;
 }
 
 .header {
@@ -32,10 +50,22 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 8rem;
+    gap: 5%;
+    @media(max-width: $r_desc_1280) {
+        gap: 3%;
+    }
     &__navigation {
         flex-grow: 1;
-        margin-left: 3.8rem;
+        margin-left: 4.5rem;
+        @media(max-width: $r_desc_1280) {
+            margin-left: 0;
+        }
+        @media(max-width: $r_desc_hd) {
+            flex-grow: 0;
+        }
+        @media(max-width: $r_tab_900) {
+            display: none;
+        }
     }
     &__nav {
         display: flex;
@@ -43,6 +73,9 @@ body {
         margin: 0;
         padding-left: 0;
         gap: 4.8rem;
+        @media(max-width: $r_desc_hd) {
+            gap: 2.5rem;
+        }
     }
     &__link {
         color: $green;
@@ -61,13 +94,16 @@ body {
         text-align: right;
         &:hover {
             color: $orange;
+        }
+        @media(max-width: $r_desc_hd) {
+            display: none;
         } 
     }
     &__cart {
         display: block;
         background-image: url(../images/cart.svg);
         background-color: $orange;
-        flex-basis: 4rem;
+        width: 4rem;
         height: 4rem;
         border-radius: 100%;
         background-size: 1.7rem 1.5rem;
@@ -76,9 +112,20 @@ body {
         position: relative;
         border: 1px solid $orange;
         transition: $std-delay;
+        cursor: pointer;
+        @media(max-width: $r_desc_hd) {
+            background-image: url(../images/cart_mobi.svg);
+            background-color: $white;
+            border-color: $green;
+            opacity: .8;
+        } 
         &:hover {
             background-color: $green;
             border: 1px solid $green;
+            @media(max-width: $r_desc_hd) {
+                background-color: $white;
+                opacity: 1;
+            } 
         } 
     }
     &__counter {
@@ -87,6 +134,62 @@ body {
         position: absolute;
         right: .7rem;
         top: .6rem;
+        @media(max-width: $r_desc_hd) {
+            color: $green;
+        } 
+    }
+    &__phone, &__menu {
+        display: none;
+    }
+
+    &__menu {
+        @media(max-width: $r_tab_900) {
+            display: block;
+            background-image: url(../images/menu.svg);
+            background-color: $white;
+            width: 4rem;
+            height: 4rem;
+            border-radius: 100%;
+            background-size: 1.7rem 1.5rem;
+            background-position: center center;
+            background-repeat: no-repeat;
+            position: relative;
+            border: 1px solid $green;
+            transition: $std-delay;
+            cursor: pointer;
+            opacity: .8;
+        }
+        &:hover {
+            opacity: 1;
+        }  
+    }
+
+    &__phone {
+        @media(max-width: $r_desc_hd) {
+            display: block;
+            background-image: url(../images/tel.svg);
+            background-color: $white;
+            width: 4rem;
+            height: 4rem;
+            border-radius: 100%;
+            background-size: 1.7rem 1.5rem;
+            background-position: center center;
+            background-repeat: no-repeat;
+            position: relative;
+            border: 1px solid $green;
+            transition: $std-delay;
+            opacity: .8;
+        }
+        &:hover {
+            opacity: 1;
+        }  
+    }
+    &__buttons {
+        @media(max-width: $r_desc_hd) {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        } 
     }
 }
 
@@ -102,6 +205,10 @@ body {
     &_med {
         width: 18rem;
         height: 5rem;
+        @media(max-width: $r_tab_900) {
+            width: 14rem;
+            height: 3.4rem;
+        } 
     }
 }
 
@@ -110,26 +217,50 @@ body {
     margin: 0 auto;
     padding-left: 15px;
     padding-right: 15px;
+    @media(max-width: $r_tab) {
+        max-width: 600px;
+    } 
 }
 
 .main {
     z-index: 0;
     position: relative;
-    padding-bottom: 187px;
+    padding-bottom: 18.7rem;
+    @media(max-width: $r_tab_900) {
+        padding-bottom: 4rem;
+    }   
     &__item {
         margin-left: 12rem;
         max-width: 378px;
-        margin-top: 5.6rem; 
+        margin-top: 5.6rem;
+        @media(max-width: $r_desc_1280) {
+            margin-left: 8rem;
+        } 
+        @media(max-width: $r_desc_1120) {
+            margin-left: 4rem;
+        }  
+        @media(max-width: $r_tab) {
+            max-width: 100%;
+            margin-left: 0;
+            margin-top: 3rem;
+        } 
     }
     &__link {
         margin-top: 6rem;
-        letter-spacing: 0.13rem; 
+        letter-spacing: 0.13rem;
+        @media(max-width: $r_tab) {
+            text-align: center;
+        } 
     }
     &__flex {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        gap:30px; 
+        gap:30px;
+        @media(max-width: $r_desc_1120) {
+            padding-top: 3rem;
+            padding-bottom: 9rem;
+        } 
     }
     &__cover {
         flex-basis: 763px;
@@ -141,6 +272,22 @@ body {
         justify-content: center;
         align-items: center;
         position: relative;
+        @media(max-width: $r_desc_1350) {
+            flex-basis: 650px;
+            height: 650px;
+        }
+        @media(max-width: $r_desc_hd) {
+            flex-basis: 600px;
+            height: 600px;
+        }  
+        @media(max-width: $r_desc_1120) {
+            border: 1px solid transparent;
+            height: auto;
+            flex-basis: calc(100% - 395px);
+        } 
+        @media(max-width: $r_tab) {
+            display: none;;
+        }  
     }
     &__line {
         width: 658px;
@@ -151,6 +298,15 @@ body {
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        @media(max-width: $r_desc_1350) {
+            width: 600px;
+            height: 600px;
+        }
+        @media(max-width: $r_desc_hd) {
+            border: 1px solid transparent;
+            width: auto;
+            height: auto;
+        }   
     }
     &__image {
         width: 92%;
@@ -158,8 +314,26 @@ body {
         border-radius: 100%;
         animation: shadow 5s infinite;
     }
+    &__imagemobi {
+        display: none;
+        @media(max-width: $r_tab) {
+            display: block;
+            max-width: 300px;
+            margin: 3rem auto 0;
+            box-shadow: 20px 20px 33px 0px rgba($green, .5);
+            border-radius: 100%;
+            animation: shadow 5s infinite;
+        } 
+    }
     &__text {
         padding-top: 4rem;
+        @media(max-width: $r_desc_1120) {
+            flex-basis: 395px;
+        }
+        @media(max-width: $r_tab) {
+            flex-basis: 100%;
+            padding-top: 0;
+        } 
     }
     &__btn {
         background-color: transparent;
@@ -187,6 +361,17 @@ body {
         &_1 {
             top: 46px;
             left: 66px;
+            @media(max-width: $r_desc_1350) {
+                top: 26px;
+                left: 54px;
+            }
+            @media(max-width: $r_desc_hd) {
+                top: 16px;
+                left: 53px;
+            } 
+            @media(max-width: $r_desc_1120) {
+                display: none;
+            }  
             &::before {
                 bottom: 8.4px;
                 right: -36.3px;
@@ -195,6 +380,16 @@ body {
         &_2 {
             top: 195px;
             right: 2px;
+            @media(max-width: $r_desc_1350) {
+                top: 124px;
+                right: -9px;
+            }
+            @media(max-width: $r_desc_hd) {
+                top: 69px;
+            }
+            @media(max-width: $r_desc_1120) {
+                display: none;
+            }  
             &::before {
                 left: -26px;
                 bottom: 15px;
@@ -203,6 +398,15 @@ body {
         &_3 {
             bottom: -45px;
             right: 244px;
+            @media(max-width: $r_desc_1350) {
+                bottom: -58px;
+            }
+            @media(max-width: $r_desc_hd) {
+                bottom: -61px;
+            } 
+            @media(max-width: $r_desc_1120) {
+                display: none;
+            } 
             &::before {
                 top: -24px;
                 left: 14px;
@@ -217,9 +421,21 @@ body {
     &__tomato {
         position: absolute;
         bottom: 133px;
-        right: 102px;
+        right: 50px;
         width: 11rem;
         z-index: -1;
+        @media(max-width: $r_tab_900) {
+            width: 7rem;
+            bottom: 20px;
+            right: 10px;
+        }
+        @media(max-width: $r_tab) {
+            bottom: auto;
+            right: auto;
+            top: 120px;
+            left: -40px;
+            transform: rotate(90deg);
+        }  
     }
     &__avocado {
         position: absolute;
@@ -227,6 +443,18 @@ body {
         right: -9.5px;
         width: 16.8rem;
         z-index: -1;
+        @media(max-width: $r_desc_full_1750) {
+            top: 120px;
+            width: 9.8rem;
+        }
+        @media(max-width: $r_tab) {
+            top: 120px;
+            width: 9.8rem;
+        }
+        @media(max-width: $r_tab) {
+            top: 90px;
+            right: -50px;
+        }    
     }
     &__cucumber {
         position: absolute;
@@ -234,6 +462,13 @@ body {
         left: 700px;
         width: 7.4rem;
         z-index: -1;
+        @media(max-width: $r_tab) {
+            top: auto;
+            left: auto;
+            bottom: 320px;
+            right: -20px;
+            transform: rotate(90deg);
+        }  
     }
     &__pepper {
         position: absolute;
@@ -241,6 +476,16 @@ body {
         left: 40px;
         width: 8.1rem;
         z-index: -1;
+        @media(max-width: $r_desc_full_1750) {
+            top: 150px;
+        }
+        @media(max-width: $r_desc) {
+            width: 5rem;
+        }
+        @media(max-width: $r_tab) {
+            top: 430px;
+            left: -5px;
+        }  
     }
     &__nuts {
         position: absolute;
@@ -248,6 +493,9 @@ body {
         left: 0px;
         width: 10.2rem;
         z-index: -1;
+        @media(max-width: $r_tab_900) {
+            display: none;
+        }  
     }
 }
 
@@ -255,6 +503,15 @@ body {
     font-family: $font-cormorant;
     font-weight: 700;
     font-size: 8rem;
+    @media(max-width: $r_desc_1280) {
+        font-size: 7rem;
+    } 
+    @media(max-width: $r_desc_1120) {
+        font-size: 6rem;
+    }
+    @media(max-width: $r_tab) {
+        text-align: center;;
+    }  
     margin: 0;
     &__span {
         font-style: italic;
@@ -270,11 +527,20 @@ body {
 .description {
     margin: 0;
     line-height: 1.5;
+    @media(max-width: $r_tab) {
+        text-align: center;
+    } 
      &_size-s {
         font-size: 1.8rem;
+        @media(max-width: $r_desc_1280) {
+            font-size: 1.6rem;
+        } 
      }
      &_size-m {
         font-size: 2.4rem;
+        @media(max-width: $r_desc_1280) {
+            font-size: 2.2rem;
+        }
      }
 }
 
@@ -290,15 +556,27 @@ body {
     cursor: pointer;
     transition: $std-delay;
     &:hover {
-        background-color: $darkk-orange;
+        background-color: $dark-orange;
     }
     &_size-s {
         font-size: 1.4rem;
+        @media(max-width: $r_desc_1280) {
+            font-size: 1.2rem;
+        }
+        @media(max-width: $r_desc_1120) {
+            font-size: 1rem;
+        }  
         padding: 2rem 3.4rem;
         box-shadow: 0rem 1rem 1.1rem .17rem rgba(207, 92, 13, 0.15);
     }
     &_size-m {
         font-size: 1.6rem;
+        @media(max-width: $r_desc_1280) {
+            font-size: 1.4rem;
+        }
+        @media(max-width: $r_desc_1120) {
+            font-size: 1.2rem;
+        }   
         padding: 2.4rem 4.3rem;
         box-shadow: 0rem 1rem 1.1rem .2rem rgba(207, 92, 13, 0.2);
     }
@@ -307,6 +585,9 @@ body {
 .offer {
     padding-top: 1.3rem;
     padding-bottom: 12.8rem;
+    @media(max-width: $r_tab_900) {
+        padding-bottom: 6rem;
+    }  
     &__text {
         margin-top: 5.4rem;
         max-width: 700px;
@@ -316,6 +597,12 @@ body {
 .slider {
     overflow: hidden;
     padding-top: 93px;
+    @media(max-width: $r_tab) {
+        max-width: 450px;
+        margin: 0 auto;
+        padding-bottom: 6rem;
+        padding-top: 5.4rem;
+    }
 }
 
 .swiper {
@@ -324,6 +611,12 @@ body {
         border: 1px solid rgba($green, .4);
         border-radius: 2rem;
         padding: 3rem 3.7rem 3.8rem;
+        @media(max-width: $r_desc_hd) {
+            padding: 2rem 2.7rem 2.8rem;
+        } 
+        @media(max-width: $r_desc_1120) {
+            padding: 1rem 1.7rem 1.8rem;
+        } 
         box-sizing: border-box;
         justify-content:space-between;
         background-repeat: no-repeat;
@@ -338,6 +631,11 @@ body {
             flex-direction: column;
             justify-content: flex-end;
             padding: 4rem 3.7rem;
+            background-size: contain; 
+            @media(max-width: $r_desc_hd) {
+                height: 400px;
+                padding: 1rem 1.7rem;
+            } 
             &:hover {
                 .swiper-slide__hover {
                     height: 233px;
@@ -375,6 +673,9 @@ body {
         &__title {
             font-family: $font-cormorant;
             font-size: 3rem;
+            @media(max-width: $r_desc_1280) {
+                font-size: 2.6rem;
+            } 
             color: $green;
             margin-bottom: 0rem;
         }
@@ -413,10 +714,17 @@ body {
             min-height: 55px;
             max-width: 300px;
             line-height: 1.5;
+            @media(max-width: $r_desc_1280) {
+                font-size: 1.6rem;
+            } 
         }
         &__price {
             font-size: 2.4rem;
             margin-bottom: 3rem;
+            @media(max-width: $r_desc_1280) {
+                font-size: 2.2rem;
+                margin-bottom: 2.4rem;
+            } 
         }
         &__cover {
             position: relative;
@@ -439,9 +747,30 @@ body {
     }
     &-pagination {
         display: none;
+        @media(max-width: $r_tab) {
+            display: block;
+        }
     }
+    .swiper-pagination-bullets.swiper-pagination-horizontal {
+        bottom: -50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .swiper-pagination-bullet-active {
+        background-color: $orange;
+        border: 1px solid $orange;
+    }
+    .swiper-pagination-bullet {
+        width: 8px;
+        height: 8px;
+    }
+
     &-button-next, &-button-prev {
         top: -60px;
+        @media(max-width: $r_tab) {
+            display: none;
+        } 
         &:hover {
             &::after {
                 color: rgba($green, 1);
@@ -492,18 +821,32 @@ body {
         .counter__btn {
             width: 40px;
             height: 40px;
+            @media(max-width: $r_desc_1350) {
+                width: 30px;
+                height: 30px;
+            }
         }
         .counter__input {
             width: 33px;
+            @media(max-width: $r_desc_1350) {
+                width: 25px;
+            }
         }
     }
     &_size-m {
         .counter__btn {
             width: 50px;
             height: 50px;
+            @media(max-width: $r_desc_1350) {
+                width: 35px;
+                height: 35px;
+            }
         }
         .counter__input {
             width: 46px;
+            @media(max-width: $r_desc_1350) {
+                width: 30px;
+            }
         }
     }
 }
@@ -511,16 +854,35 @@ body {
 .about {
     padding-top: 3.4rem;
     padding-bottom: 16.5rem;
+    @media(max-width: $r_tab_900) {
+        padding-bottom: 8rem;
+    }  
     &__box {
         display: flex;
         justify-content: space-between;
         align-items: center;
         margin-top: 8rem;
-        padding-left: 11.4rem;
+        margin-left: 11.4rem;
+        @media(max-width: $r_desc_1280) {
+            margin-left: 8rem;
+        } 
+        @media(max-width: $r_desc_1120) {
+            margin-left: 4rem;
+            margin-top: 4rem;
+        }
+        @media(max-width: $r_tab) {
+            display: initial;
+        }  
     }
     &__text {
         flex-basis: 610px;
-        padding-bottom: 4rem;  
+        @media(max-width: $r_desc_1350) {
+            flex-basis: 450px;
+        }
+        @media(max-width: $r_tab_900) {
+            flex-basis: 350px;
+        }  
+        padding-bottom: 4rem;
     }
     &__list {
         display: flex;
@@ -534,6 +896,12 @@ body {
         font-weight: 700;
         font-style: italic;
         font-size: 3rem;
+        @media(max-width: $r_desc_hd) {
+            gap: 3rem;
+        }
+        @media(max-width: $r_tab_900) {
+            gap: 1.5rem;
+        }   
     }
     &__item {
         text-align: center;
@@ -574,6 +942,9 @@ body {
 
 .trends {
     padding-bottom: 13.3rem;
+    @media(max-width: $r_tab_900) {
+        padding-bottom: 6rem;
+    }  
     &__text {
         margin-top: 3.2rem;
     }
@@ -583,6 +954,7 @@ body {
     list-style-type: none;
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
     padding: 0;
     margin: 0;
     gap: 2rem;
@@ -609,6 +981,9 @@ body {
 .catalog {
     padding-top: 4.7rem;
     padding-bottom: 11rem;
+    @media(max-width: $r_tab_900) {
+        padding-bottom: 5rem;
+    }  
     &__text {
         margin-top: 3rem;
         margin-bottom: 9rem;
@@ -619,12 +994,24 @@ body {
     &-grid {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
+        @media(max-width: $r_desc_1470) {
+            grid-template-columns: repeat(3, 1fr);
+        }
+        @media(max-width: $r_desc_1120) {
+            grid-template-columns: repeat(2, 1fr);
+        }  
         padding: 0;
         gap: 20px;
         &__item {
             border: 1px solid rgba($green, .4);
             border-radius: 2rem;
             padding: 2.7rem 3rem 3.8rem;
+            @media(max-width: $r_desc_1280) {
+                padding: 2.4rem 2.7rem 3.3rem;
+            }
+            @media(max-width: $r_tab) {
+                padding: 2rem 2.2rem 2.7rem;
+            }
             box-sizing: border-box;
             box-shadow: none;
             transition: $std-delay;
@@ -636,7 +1023,7 @@ body {
             position: relative;
             overflow: hidden;
             width: 100%;
-            height: 204px;
+            height: 130px;
             text-align: center;
         }
         &__image {
@@ -651,6 +1038,10 @@ body {
             color: $green;
             margin-top: 1.7rem;
             margin-bottom: 0rem;
+            @media(max-width: $r_desc_1280) {
+                font-size: 2.4rem;
+                margin-top: 1.5rem;
+            }
         }
         &__description {
             font-size: 1.6rem;
@@ -660,11 +1051,19 @@ body {
             min-height: 61px;
             max-width: 300px;
             line-height: 1.5;
+            @media(max-width: $r_desc_1280) {
+                font-size: 1.6rem;
+                margin-top: 1.6rem;
+            }
         }
         &__price {
             font-size: 2.4rem;
             margin-bottom: 3rem;
             margin-top: 0;
+            @media(max-width: $r_desc_1280) {
+                font-size: 2.2rem;
+                margin-bottom: 2.4rem;
+            }
         }
         &__footer {
             display: flex;
@@ -707,15 +1106,31 @@ body {
 .delivery {
     padding-top: 2rem;
     padding-bottom: 14rem;
+    @media(max-width: $r_tab_900) {
+        padding-bottom: 7rem;
+    }  
     &__block {
         display: flex;
-        justify-content: space-start;
+        justify-content: start;
         gap: 12%;
         margin-top: 6.9rem;
         margin-left: 12.2rem;
+        @media(max-width: $r_desc_1280) {
+            margin-left: 8rem;
+        } 
+        @media(max-width: $r_desc_1120) {
+            margin-left: 4rem;
+        }
+        @media(max-width: $r_tab) {
+            margin-left: 0rem;
+            display: initial;
+        }   
     }
     &__text {
         flex-basis: 44%;
+        @media(max-width: $r_tab) {
+            margin-bottom: 2rem;
+        }  
     }
     &__box {
         flex-basis: 37%;
@@ -726,6 +1141,9 @@ body {
         margin: 5rem 0 0 0;
         padding-left: 0;
         gap: 2.9rem;
+        @media(max-width: $r_tab) {
+            justify-content: center;;
+        } 
         &-item{
             background-size: cover;
             background-repeat: no-repeat;
@@ -778,15 +1196,31 @@ body {
 
 .contact {
     padding-top: 5.9rem;
-    padding-bottom: 160px;
+    padding-bottom: 16rem;
+    @media(max-width: $r_tab_900) {
+        padding-bottom: 5rem;
+    }  
     &-box {
         display: flex;
         align-items: center;
         justify-content: space-between;
+        @media(max-width: $r_tab) {
+            display: initial;
+        } 
         &__text {
             max-width: 400px;
             flex-grow: 1;
             margin:5.6rem 0 0 12rem;
+            @media(max-width: $r_desc_1280) {
+                margin-left: 8rem;
+                margin-top: 4.5rem;
+            } 
+            @media(max-width: $r_desc_1120) {
+                margin-left: 4rem;
+            }
+            @media(max-width: $r_tab) {
+                margin: 3rem auto 0 auto;
+            } 
         }
         &__form {
             flex-basis: 589px;
@@ -797,11 +1231,22 @@ body {
         padding: 0;
         list-style-type: none;
         font-size: 2.4rem;
+        @media(max-width: $r_desc_1280) {
+            font-size: 2.2rem;
+            margin-top: 4rem;
+        } 
+        @media(max-width: $r_tab) {
+            font-size: 2rem;
+            margin-top: 2rem;
+        } 
         &-item{
             display: flex;
             gap: 3.3rem;
             margin-bottom: 2.1rem;
             letter-spacing: 0.6px;
+            @media(max-width: $r_tab) {
+                justify-content: center;
+            } 
             &__link {
                 text-decoration: none;
                 color: $green;
@@ -891,19 +1336,49 @@ body {
 .footer {
     &__info {
         flex-basis: 66.5%;
+        @media(max-width: $r_desc_hd) {
+            flex-basis: 75%;
+        }
+        @media(max-width: $r_tab_900) {
+            flex-basis: 80%;
+        }  
         display: flex;
         justify-content: space-between;
+        @media(max-width: $r_tab) {
+            display: block;
+            text-align: center;
+        } 
     }
     &__box {
         padding-top: 8rem;
         font-size: 1.8rem;
+        @media(max-width: $r_desc_1280) {
+            font-size: 1.6rem;
+        } 
         display: flex;
         justify-content: space-between;
+        @media(max-width: $r_tab) {
+            display: block;
+        } 
+    }
+    &__logo {
+        @media(max-width: $r_tab) {
+            margin: 0 auto 1rem;
+        } 
     }
     &__list {
         list-style-type: none;
         margin: 0;
         padding: 0;
+        &_mobi {
+            @media(max-width: $r_tab) {
+                display: flex;
+                gap: 2rem;
+                flex-direction: row;
+                justify-content: center;
+                margin: 3rem 0;
+            } 
+        }
     }
     &__item {
         margin-bottom: 1.6rem;
@@ -913,6 +1388,9 @@ body {
     }
     &__link {
         font-size: 1.8rem;
+        @media(max-width: $r_desc_1280) {
+            font-size: 1.6rem;
+        } 
         line-height: 1.5;
         text-decoration: none;
         color: $green;
@@ -923,8 +1401,15 @@ body {
     }
     &__tel {
         font-size: 2.7rem;
+        @media(max-width: $r_desc_1280) {
+            font-size: 2.4rem;
+        }
         display: block;
         margin-bottom: 2rem;
+        @media(max-width: $r_tab) {
+            margin-top: 4rem;
+            margin-bottom: 0;
+        }  
     }
     &-social {
         list-style-type: none;
@@ -933,6 +1418,11 @@ body {
         justify-content: space-between;
         padding-left: 0;
         margin-top: 2.7rem;
+        @media(max-width: $r_tab) {
+            margin-top: 4rem;
+            justify-content: center;
+            gap: 3rem;
+        }  
         margin-bottom: 0;
         &__link {
             display: block;
@@ -968,8 +1458,16 @@ body {
         display: flex;
         justify-content: space-between;
         font-size: 1.6rem;
+        @media(max-width: $r_desc_1280) {
+            font-size: 1.4rem;
+        } 
         color: rgba($green, .6);
         margin-top: 5.8rem;
+        @media(max-width: $r_tab) {
+            display: block;
+            text-align: center;
+            margin-top: 3rem;
+        } 
     }
     &__author {
         color: rgba($green, .6);

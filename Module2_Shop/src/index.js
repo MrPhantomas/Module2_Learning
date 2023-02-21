@@ -20,6 +20,20 @@ var swiper = new Swiper(".offerSwiper", {
       nextEl: ".swiper-button-next",
       prevEl: ".swiper-button-prev",
     },
+    breakpoints: {
+      320: {
+        slidesPerView: 1,
+        slidesPerGroup: 1
+      },
+      768: {
+        slidesPerView: 2,
+        slidesPerGroup: 2
+      },
+      1000: {
+        slidesPerView: 3,
+        slidesPerGroup: 3
+      }
+    },
     modules: [Navigation, Pagination],
 });
 
@@ -37,6 +51,20 @@ var swiper = new Swiper(".trendsSwiper", {
     navigation: {
       nextEl: ".swiper-button-next",
       prevEl: ".swiper-button-prev",
+    },
+        breakpoints: {
+      320: {
+        slidesPerView: 1,
+        slidesPerGroup: 1
+      },
+      768: {
+        slidesPerView: 2,
+        slidesPerGroup: 2
+      },
+      1000: {
+        slidesPerView: 3,
+        slidesPerGroup: 3
+      }
     },
     modules: [Navigation, Pagination],
 }); 
