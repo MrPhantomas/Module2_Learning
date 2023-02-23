@@ -27,6 +27,9 @@ $r_desc_full_1750: 1750px;
 
 html {
     font-size: 10px;
+    @media(max-width: $r_mob_500) {
+        font-size: 8px;
+    } 
 }
 
 body {
@@ -54,6 +57,9 @@ body {
     @media(max-width: $r_desc_1280) {
         gap: 3%;
     }
+    @media(max-width: $r_mob_360) {
+        margin: 0 auto 0.7rem;
+    }  
     &__navigation {
         flex-grow: 1;
         margin-left: 4.5rem;
@@ -118,7 +124,12 @@ body {
             background-color: $white;
             border-color: $green;
             opacity: .8;
-        } 
+        }
+        @media(max-width: $r_mob_500) {
+            width: 4.5rem;
+            height: 4.5rem;
+            background-size: 2rem;
+        }  
         &:hover {
             background-color: $green;
             border: 1px solid $green;
@@ -136,7 +147,10 @@ body {
         top: .6rem;
         @media(max-width: $r_desc_hd) {
             color: $green;
-        } 
+        }
+        @media(max-width: $r_mob_500) {
+            font-size: 1rem;
+        }  
     }
     &__phone, &__menu {
         display: none;
@@ -159,6 +173,11 @@ body {
             cursor: pointer;
             opacity: .8;
         }
+        @media(max-width: $r_mob_500) {
+            width: 4.5rem;
+            height: 4.5rem;
+            background-size: 2rem;
+        }  
         &:hover {
             opacity: 1;
         }  
@@ -180,6 +199,11 @@ body {
             transition: $std-delay;
             opacity: .8;
         }
+        @media(max-width: $r_mob_500) {
+            width: 4.5rem;
+            height: 4.5rem;
+            background-size: 2rem;
+        }  
         &:hover {
             opacity: 1;
         }  
@@ -189,7 +213,10 @@ body {
             display: flex;
             align-items: center;
             gap: 1.5rem;
-        } 
+        }
+        @media(max-width: $r_mob_500) {
+            gap: 1.5rem;
+        }   
     }
 }
 
@@ -208,7 +235,11 @@ body {
         @media(max-width: $r_tab_900) {
             width: 14rem;
             height: 3.4rem;
-        } 
+        }
+        @media(max-width: $r_mob_360) {
+            width: 14.9rem;
+            height: 4.5rem;
+        }  
     }
 }
 
@@ -243,14 +274,23 @@ body {
             max-width: 100%;
             margin-left: 0;
             margin-top: 3rem;
-        } 
+        }
+        @media(max-width: $r_mob_360) {
+            margin-top: 1.3rem;
+        }   
     }
     &__link {
         margin-top: 6rem;
         letter-spacing: 0.13rem;
         @media(max-width: $r_tab) {
             text-align: center;
-        } 
+        }
+        @media(max-width: $r_mob_500) {
+            margin-top: 3.3rem;
+        }
+        @media(max-width: $r_mob_500) {
+            margin-top: 3.3rem;
+        }   
     }
     &__flex {
         display: flex;
@@ -260,7 +300,10 @@ body {
         @media(max-width: $r_desc_1120) {
             padding-top: 3rem;
             padding-bottom: 9rem;
-        } 
+        }
+        @media(max-width: $r_mob_360) {
+            padding-bottom: 0rem;
+        }   
     }
     &__cover {
         flex-basis: 763px;
@@ -323,7 +366,10 @@ body {
             box-shadow: 20px 20px 33px 0px rgba($green, .5);
             border-radius: 100%;
             animation: shadow 5s infinite;
-        } 
+        }
+        @media(max-width: $r_mob_500) {
+            max-width: 220px;
+        }  
     }
     &__text {
         padding-top: 4rem;
@@ -430,11 +476,15 @@ body {
             right: 10px;
         }
         @media(max-width: $r_tab) {
-            bottom: auto;
-            right: auto;
+            bottom: inherit;
+            right: inherit;
             top: 120px;
             left: -40px;
             transform: rotate(90deg);
+        } 
+        @media(max-width: $r_mob_500) {
+            top: 82px;
+            left: -14px;
         }  
     }
     &__avocado {
@@ -448,27 +498,32 @@ body {
             width: 9.8rem;
         }
         @media(max-width: $r_tab) {
-            top: 120px;
-            width: 9.8rem;
-        }
-        @media(max-width: $r_tab) {
             top: 90px;
             right: -50px;
-        }    
+        }
+        @media(max-width: $r_mob_500) {
+            top: 88px;
+            right: -38px;
+        }      
     }
     &__cucumber {
         position: absolute;
         top: 0px;
         left: 700px;
-        width: 7.4rem;
+        width: 8.5rem;
         z-index: -1;
         @media(max-width: $r_tab) {
-            top: auto;
-            left: auto;
+            top: inherit;
+            left: inherit;
             bottom: 320px;
             right: -20px;
             transform: rotate(90deg);
-        }  
+            width: 6.5rem;
+        }
+        @media(max-width: $r_mob_500) {
+            bottom: 216px;
+            right: -15px;
+        }    
     }
     &__pepper {
         position: absolute;
@@ -485,7 +540,11 @@ body {
         @media(max-width: $r_tab) {
             top: 430px;
             left: -5px;
-        }  
+        }
+        @media(max-width: $r_mob_500) {
+            width: 3.6rem;
+            top: 350px;
+        }   
     }
     &__nuts {
         position: absolute;
@@ -503,6 +562,7 @@ body {
     font-family: $font-cormorant;
     font-weight: 700;
     font-size: 8rem;
+    margin: 0;
     @media(max-width: $r_desc_1280) {
         font-size: 7rem;
     } 
@@ -510,9 +570,13 @@ body {
         font-size: 6rem;
     }
     @media(max-width: $r_tab) {
-        text-align: center;;
+        text-align: center;
+    }
+    @media(max-width: $r_mob_360) {
+        font-size: 4.25rem;
+        letter-spacing: -0.24rem;
+        line-height: 1.3;
     }  
-    margin: 0;
     &__span {
         font-style: italic;
         margin-top: -14px;
@@ -534,13 +598,19 @@ body {
         font-size: 1.8rem;
         @media(max-width: $r_desc_1280) {
             font-size: 1.6rem;
-        } 
+        }
+        @media(max-width: $r_mob_360) {
+            font-size: 1.5rem;
+        }  
      }
      &_size-m {
         font-size: 2.4rem;
         @media(max-width: $r_desc_1280) {
             font-size: 2.2rem;
         }
+        @media(max-width: $r_mob_360) {
+            font-size: 1.5rem;
+        }  
      }
 }
 
@@ -558,14 +628,17 @@ body {
     &:hover {
         background-color: $dark-orange;
     }
+    @media(max-width: $r_tab) {
+        margin: 0 auto;
+    } 
     &_size-s {
         font-size: 1.4rem;
         @media(max-width: $r_desc_1280) {
             font-size: 1.2rem;
         }
-        @media(max-width: $r_desc_1120) {
-            font-size: 1rem;
-        }  
+        @media(max-width: $r_mob_500) {
+            padding: 1.9rem 3.9rem;
+        }
         padding: 2rem 3.4rem;
         box-shadow: 0rem 1rem 1.1rem .17rem rgba(207, 92, 13, 0.15);
     }
@@ -574,9 +647,12 @@ body {
         @media(max-width: $r_desc_1280) {
             font-size: 1.4rem;
         }
-        @media(max-width: $r_desc_1120) {
-            font-size: 1.2rem;
-        }   
+        @media(max-width: $r_mob_500) {
+            font-size: 1.25rem;
+            padding: 2.4rem 4.3rem;
+            letter-spacing: 0.11rem;
+            padding: 1.7rem 3.7rem;
+        }  
         padding: 2.4rem 4.3rem;
         box-shadow: 0rem 1rem 1.1rem .2rem rgba(207, 92, 13, 0.2);
     }
@@ -587,22 +663,36 @@ body {
     padding-bottom: 12.8rem;
     @media(max-width: $r_tab_900) {
         padding-bottom: 6rem;
-    }  
+    }
+    @media(max-width: $r_tab) {
+        padding-bottom: 4rem;
+    }    
     &__text {
         margin-top: 5.4rem;
         max-width: 700px;
+        @media(max-width: $r_mob_360) {
+            margin: 2.7rem auto 0;
+            max-width: 200px;
+        }    
     }
 }
 
 .slider {
     overflow: hidden;
-    padding-top: 93px;
+    padding-top: 9.4rem;
     @media(max-width: $r_tab) {
         max-width: 450px;
         margin: 0 auto;
         padding-bottom: 6rem;
         padding-top: 5.4rem;
     }
+    @media(max-width: $r_mob_500) {
+        max-width: 210px;
+        padding-bottom: 7rem;
+    }
+    @media(max-width: $r_mob_360) {
+        overflow: visible;
+    } 
 }
 
 .swiper {
@@ -616,6 +706,9 @@ body {
         } 
         @media(max-width: $r_desc_1120) {
             padding: 1rem 1.7rem 1.8rem;
+        } 
+        @media(max-width: $r_mob_500) {
+            padding: 1.5rem 2rem 2.5rem;
         } 
         box-sizing: border-box;
         justify-content:space-between;
@@ -634,12 +727,18 @@ body {
             background-size: contain; 
             @media(max-width: $r_desc_hd) {
                 height: 400px;
-                padding: 1rem 1.7rem;
-            } 
+            }
+            @media(max-width: $r_mob_500) {
+                height: 240px;
+                padding: 1.5rem 2rem 2.5rem;
+            }   
             &:hover {
                 .swiper-slide__hover {
                     height: 233px;
                     opacity: 1;
+                    @media(max-width: $r_mob_500) {
+                        height: initial;
+                    }
                 } 
                 &::after {
                     content: '';
@@ -659,25 +758,75 @@ body {
         }
         &-milk {
             background-image: url(../images/milk.png);
+            @media(max-width: $r_mob_500) {
+                background-image: none;
+                & .swiper-slide__mobicover {
+                    background-image: url(../images/catalog/milk.png);
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                    background-position: center center;
+                    overflow: hidden;
+                    object-fit: contain;
+                    width: 70px;
+                    height: 130px;
+                    margin: 0 auto;
+                }
+            }
         }
         &-pasta {
             background-image: url(../images/pasta.png);
+            @media(max-width: $r_mob_500) {
+                background-image: none;
+                & .swiper-slide__mobicover {
+                    background-image: url(../images/pasta.png);
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                    background-position: center center;
+                    overflow: hidden;
+                    object-fit: contain;
+                    width: 70px;
+                    height: 130px;
+                    margin: 0 auto;
+                }
+            }
         }
         &-meat {
             background-image: url(../images/meat.png);
+            @media(max-width: $r_mob_500) {
+                background-image: none;
+                & .swiper-slide__mobicover {
+                    background-image: url(../images/meat.png);
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                    background-position: center center;
+                    overflow: hidden;
+                    object-fit: contain;
+                    width: 70px;
+                    height: 130px;
+                    margin: 0 auto;
+                }
+            }
         }
         &__hover {
             height: 0;
+            opacity: 0;
             overflow: hidden;
+            @media(max-width: $r_mob_500) {
+                height: auto;
+                opacity: 1;
+                margin-top: 2.1rem;
+            }
         } 
         &__title {
             font-family: $font-cormorant;
             font-size: 3rem;
-            @media(max-width: $r_desc_1280) {
-                font-size: 2.6rem;
-            } 
             color: $green;
             margin-bottom: 0rem;
+            @media(max-width: $r_mob_500) {
+                font-size: 1.75rem;
+                text-align: center;
+                margin-top: 3.3rem;
+            } 
         }
         &__text {
             color: rgba($green, 0.7);
@@ -685,6 +834,9 @@ body {
             margin-top: 2.5rem;
             margin-bottom: 3.4rem;
             max-width: 263px;
+            @media(max-width: $r_mob_500) {
+                display: none;
+            }
         }
         &__link {
             text-transform: uppercase;
@@ -705,6 +857,19 @@ body {
                 background-size: cover;
                 background-repeat: no-repeat;
             }
+            &:hover {
+                opacity: 1;
+            }
+            @media(max-width: $r_mob_500) {
+                font-size: 1.25rem;
+                gap: 1.1rem;
+                letter-spacing: .06rem;
+                justify-content: center;
+                &::before{
+                    width: 2.5rem;
+                    height: 2.5rem;
+                }
+            }
         }
         &__description {
             font-size: 1.8rem;
@@ -716,6 +881,11 @@ body {
             line-height: 1.5;
             @media(max-width: $r_desc_1280) {
                 font-size: 1.6rem;
+            }
+            @media(max-width: $r_mob_500) {
+                font-size: 1.5rem;
+                text-align: center;
+                min-height: 32px;
             } 
         }
         &__price {
@@ -724,7 +894,11 @@ body {
             @media(max-width: $r_desc_1280) {
                 font-size: 2.2rem;
                 margin-bottom: 2.4rem;
-            } 
+            }
+            @media(max-width: $r_mob_500) {
+                font-size: 1.5rem;
+                text-align: center;
+            }  
         }
         &__cover {
             position: relative;
@@ -732,6 +906,9 @@ body {
             width: 100%;
             height: 322px;
             text-align: center;
+            @media(max-width: $r_mob_500) {
+                height: 90px;
+            } 
         }
         &__image {
             width: 100%;
@@ -756,6 +933,9 @@ body {
         display: flex;
         align-items: center;
         justify-content: center;
+        @media(max-width: $r_mob_500) {
+            bottom: -40px;
+        }
     }
     .swiper-pagination-bullet-active {
         background-color: $orange;
@@ -792,6 +972,9 @@ body {
 
 .counter {
     display: flex;
+    @media(max-width: $r_tab) {
+        display: none;
+    } 
     &__btn {
         cursor: pointer;
         background-color: transparent;
@@ -821,14 +1004,14 @@ body {
         .counter__btn {
             width: 40px;
             height: 40px;
-            @media(max-width: $r_desc_1350) {
+            @media(max-width: $r_desc_1470) {
                 width: 30px;
                 height: 30px;
             }
         }
         .counter__input {
             width: 33px;
-            @media(max-width: $r_desc_1350) {
+            @media(max-width: $r_desc_1470) {
                 width: 25px;
             }
         }
@@ -856,7 +1039,11 @@ body {
     padding-bottom: 16.5rem;
     @media(max-width: $r_tab_900) {
         padding-bottom: 8rem;
-    }  
+    }
+    @media(max-width: $r_mob_360) {
+        padding-top: 0rem;
+        padding-bottom: 6rem;
+    }   
     &__box {
         display: flex;
         justify-content: space-between;
@@ -876,13 +1063,16 @@ body {
     }
     &__text {
         flex-basis: 610px;
+        padding-bottom: 4rem;
         @media(max-width: $r_desc_1350) {
             flex-basis: 450px;
         }
         @media(max-width: $r_tab_900) {
             flex-basis: 350px;
-        }  
-        padding-bottom: 4rem;
+        }
+        @media(max-width: $r_mob_360) {
+            margin-top: 1rem;
+        }   
     }
     &__list {
         display: flex;
@@ -901,7 +1091,15 @@ body {
         }
         @media(max-width: $r_tab_900) {
             gap: 1.5rem;
-        }   
+        }
+        @media(max-width: $r_tab_900) {
+            gap: 2rem;
+            justify-content: center;
+        }
+        @media(max-width: $r_mob_360) {
+            font-size: 1.75rem;
+            gap: 5rem;
+        }        
     }
     &__item {
         text-align: center;
@@ -909,6 +1107,9 @@ body {
         flex-direction: column-reverse;
         align-items: center;
         gap: 2rem;
+        @media(max-width: $r_mob_360) {
+            gap: 1rem;
+        }   
         &::after {
             content: '';
             background-repeat: no-repeat;
@@ -917,6 +1118,10 @@ body {
             width: 8.5rem;
             border-radius: 100%;
             border: 1px solid $green;
+            @media(max-width: $r_mob_360) {
+                height: 7.3rem;
+                width: 7.3rem;
+            }         
         }
         &:nth-child(1) {
             &::after {
@@ -944,9 +1149,17 @@ body {
     padding-bottom: 13.3rem;
     @media(max-width: $r_tab_900) {
         padding-bottom: 6rem;
-    }  
+    }
+    @media(max-width: $r_mob_360) {
+        padding-bottom: 4rem;
+    }    
     &__text {
         margin-top: 3.2rem;
+        @media(max-width: $r_mob_360) {
+            max-width: 200px;
+            text-align: center;
+            margin: 1.6rem auto 0;
+        }   
     }
 }
 
@@ -958,9 +1171,13 @@ body {
     padding: 0;
     margin: 0;
     gap: 2rem;
+    justify-content: center;
     &__item {
         flex-basis: 230px;
         text-align: center;
+        @media(max-width: $r_tab) {
+            flex-basis: 170px;
+        }
     }
     &__link {
         padding: 2.4rem 0;
@@ -975,6 +1192,12 @@ body {
             border: 1px solid $orange;
             color: $orange;
         }
+        @media(max-width: $r_desc_1280) {
+            font-size: 1.6rem;
+        }
+        @media(max-width: $r_tab) {
+            padding: 2rem 0;
+        }
     }
 }
 
@@ -982,36 +1205,53 @@ body {
     padding-top: 4.7rem;
     padding-bottom: 11rem;
     @media(max-width: $r_tab_900) {
-        padding-bottom: 5rem;
-    }  
+        padding-bottom: 8rem;
+    }
+    @media(max-width: $r_mob_360) {
+        padding-top: 0;
+        padding-bottom: 4rem;
+    }    
     &__text {
         margin-top: 3rem;
         margin-bottom: 9rem;
+        @media(max-width: $r_mob_360) {
+            margin-top: 2rem;
+        }
     }
     &__list {
         margin-bottom: 5rem;
     }
     &-grid {
         display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        @media(max-width: $r_desc_1470) {
-            grid-template-columns: repeat(3, 1fr);
-        }
-        @media(max-width: $r_desc_1120) {
-            grid-template-columns: repeat(2, 1fr);
-        }  
         padding: 0;
         gap: 20px;
+        grid-template-columns: repeat(4, 1fr);
+        @media(max-width: $r_desc_1280) {
+            grid-template-columns: repeat(3, 3fr);
+        }
+        @media(max-width: $r_desc) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+        @media(max-width: $r_tab) {
+            gap: 10px;
+        }  
         &__item {
             border: 1px solid rgba($green, .4);
             border-radius: 2rem;
             padding: 2.7rem 3rem 3.8rem;
-            @media(max-width: $r_desc_1280) {
+            @media(max-width: $r_desc_1470) {
                 padding: 2.4rem 2.7rem 3.3rem;
             }
             @media(max-width: $r_tab) {
                 padding: 2rem 2.2rem 2.7rem;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                padding: 2rem 1.5rem;
             }
+            @media(max-width: $r_mob_500) {
+                padding: 1.7rem 1rem;
+            }  
             box-sizing: border-box;
             box-shadow: none;
             transition: $std-delay;
@@ -1023,8 +1263,23 @@ body {
             position: relative;
             overflow: hidden;
             width: 100%;
-            height: 130px;
+            height: 204px;
             text-align: center;
+            @media(max-width: $r_desc_1470) { 
+                height: 180px;
+            }
+            @media(max-width: $r_desc_1120) { 
+                height: 170px;
+            }  
+            @media(max-width: $r_tab) { 
+                height: 150px;
+            }
+            @media(max-width: $r_mob_600) { 
+                height: 135px;
+            }
+            @media(max-width: $r_mob_500) {
+                height: 55px;
+            }  
         }
         &__image {
             height: 100%;
@@ -1038,10 +1293,13 @@ body {
             color: $green;
             margin-top: 1.7rem;
             margin-bottom: 0rem;
-            @media(max-width: $r_desc_1280) {
-                font-size: 2.4rem;
-                margin-top: 1.5rem;
+            @media(max-width: $r_tab) {
+                font-size: 2rem;
+                margin-top: 1.3rem;
             }
+            @media(max-width: $r_mob_500) {
+                font-size: 1.75rem;
+            } 
         }
         &__description {
             font-size: 1.6rem;
@@ -1051,30 +1309,43 @@ body {
             min-height: 61px;
             max-width: 300px;
             line-height: 1.5;
-            @media(max-width: $r_desc_1280) {
-                font-size: 1.6rem;
-                margin-top: 1.6rem;
+            @media(max-width: $r_tab) {
+                font-size: 1.3rem;
+                margin-top: 1.4rem;
             }
+            @media(max-width: $r_mob_500) {
+                font-size: 1.25rem;
+                margin-top: 1.75rem;
+                min-height: 44px;
+            }  
         }
         &__price {
             font-size: 2.4rem;
             margin-bottom: 3rem;
             margin-top: 0;
-            @media(max-width: $r_desc_1280) {
-                font-size: 2.2rem;
-                margin-bottom: 2.4rem;
+            @media(max-width: $r_tab) {
+                font-size: 2rem;
+                margin-bottom: 2rem;
             }
+            @media(max-width: $r_mob_500) {
+                font-size: 1.5rem;
+                margin-bottom: 1.75rem;
+            }  
         }
         &__footer {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            gap: 10px;
         }
     }
     &__load {
         margin-top: 6rem;
         display: flex;
         justify-content: center;
+        @media(max-width: $r_mob_360) {
+            margin-top: 4.6rem;
+        }  
         &__btn {
             text-transform: uppercase;
             text-decoration: none;
@@ -1087,6 +1358,9 @@ body {
             background-color: $white;
             cursor: pointer;
             transition: $std-delay;
+            @media(max-width: $r_mob_360) {
+                font-size: 1.25rem;
+            }  
             &::before{
                 content: '';
                 display: block;
@@ -1124,13 +1398,16 @@ body {
         @media(max-width: $r_tab) {
             margin-left: 0rem;
             display: initial;
-        }   
+        }    
     }
     &__text {
         flex-basis: 44%;
         @media(max-width: $r_tab) {
             margin-bottom: 2rem;
-        }  
+        }
+        @media(max-width: $r_mob_360) {
+            margin-bottom: 4.5rem;
+        }   
     }
     &__box {
         flex-basis: 37%;
@@ -1159,21 +1436,36 @@ body {
                 background-image: url(../images/mastercard.svg);
                 height: 35px;
                 width: 58px;
+                @media(max-width: $r_mob_360) {
+                    height: 17.5px;
+                    width: 29px;
+                }  
             }
             &:nth-child(2) {
                 background-image: url(../images/visa.svg);
                 height: 27px;
                 width: 91px;
+                @media(max-width: $r_mob_360) {
+                    height: 13.5px;
+                    width: 48px;
+                } 
             }
             &:nth-child(3) {
                 background-image: url(../images/paypal.svg);
                 height: 33px;
                 width: 125px;
+                @media(max-width: $r_mob_360) {
+                    height: 16.5px;
+                    width: 62.5px;
+                } 
             }
         }
     }
     &__description {
         margin-bottom: 2.7rem;
+        @media(max-width: $r_mob_360) {
+            margin-top: 3.2rem;
+        } 
     }
     &__link {
         color: $green;
@@ -1198,8 +1490,13 @@ body {
     padding-top: 5.9rem;
     padding-bottom: 16rem;
     @media(max-width: $r_tab_900) {
-        padding-bottom: 5rem;
-    }  
+        padding-top: 4rem;
+        padding-bottom: 8rem; 
+    }
+    @media(max-width: $r_mob_360) {
+        padding-top: 0rem;
+        padding-bottom: 4.2rem;
+    }   
     &-box {
         display: flex;
         align-items: center;
@@ -1224,6 +1521,9 @@ body {
         }
         &__form {
             flex-basis: 589px;
+            @media(max-width: $r_mob_360) {
+                margin-top: 5rem;
+            }  
         }
     }
     &__contacts {
@@ -1238,7 +1538,12 @@ body {
         @media(max-width: $r_tab) {
             font-size: 2rem;
             margin-top: 2rem;
-        } 
+        }
+        @media(max-width: $r_mob_360) {
+            font-size: 1.5rem;
+            display: flex;
+            gap: 1.8rem;
+        }  
         &-item{
             display: flex;
             gap: 3.3rem;
@@ -1246,6 +1551,11 @@ body {
             letter-spacing: 0.6px;
             @media(max-width: $r_tab) {
                 justify-content: center;
+            }
+            @media(max-width: $r_mob_360) {
+                gap: 1.2rem;
+                align-items: center;
+                letter-spacing: 0.06rem;
             } 
             &__link {
                 text-decoration: none;
@@ -1265,6 +1575,10 @@ body {
                     background-image: url(../images/phone.svg);
                     height: 28px;
                     width: 29px;
+                    @media(max-width: $r_mob_360) {
+                        height: 18px;
+                        width: 18px;
+                    } 
                 }
             }
             &:nth-child(2) {
@@ -1272,6 +1586,10 @@ body {
                     background-image: url(../images/mail.svg);
                     height: 28px;
                     width: 29px;
+                    @media(max-width: $r_mob_360) {
+                        height: 18px;
+                        width: 18px;
+                    } 
                 }
             }
         }
@@ -1282,16 +1600,28 @@ body {
     border: 2px solid rgba($green, .4);
     padding: 3.2rem 5.8rem 4rem;
     border-radius: 2rem;
+    @media(max-width: $r_mob_360) {
+        padding: 2.6rem 1.6rem 4rem;
+    } 
     &__title { 
         font-size: 30px;
         font-family: $font-cormorant;
         margin-top: 0;
+        @media(max-width: $r_mob_360) {
+            font-size: 2.75rem;
+            text-align: center;
+            margin-bottom: 2.7rem;
+        } 
     }
     &__label {
         font-size: 1.2rem;
         margin-bottom: 1rem;
         display: block;
         margin-left: .6rem;
+        @media(max-width: $r_mob_360) {
+            margin-left: 0;
+            margin-bottom: .7rem;
+        }
     }
     &__input {
         border: 1px solid rgba($green, .4);
@@ -1303,6 +1633,11 @@ body {
         border-radius: 2rem;
         outline: none;
         transition: $std-delay;
+        @media(max-width: $r_mob_360) {
+            border-radius: 2.5rem;
+            padding: 2rem;
+            margin-bottom: 1.5rem;
+        }
         &:focus {
             border: 1px solid $green;
         }
@@ -1317,6 +1652,9 @@ body {
         max-width: 360px;
         margin-top: 1.6rem;
         margin-bottom: 0;
+        @media(max-width: $r_mob_360) {
+            text-align: center;
+        }
     }
     &__docs {
         color: rgba($green, .6);
@@ -1325,6 +1663,11 @@ body {
     }
     &__link {
         margin-top: 1.2rem;
+        @media(max-width: $r_mob_360) {
+            margin: 3.8rem auto 0;
+            padding: 2rem 4.7rem;
+            display: block;
+        }
     }
 }
 
@@ -1377,7 +1720,12 @@ body {
                 flex-direction: row;
                 justify-content: center;
                 margin: 3rem 0;
-            } 
+            }
+            @media(max-width: $r_mob_360) {
+                letter-spacing: 0.006rem;
+                gap: 3rem;
+                margin: 3rem 0 1rem;
+            }    
         }
     }
     &__item {
@@ -1401,15 +1749,19 @@ body {
     }
     &__tel {
         font-size: 2.7rem;
+        display: block;
+        margin-bottom: 2rem;
         @media(max-width: $r_desc_1280) {
             font-size: 2.4rem;
         }
-        display: block;
-        margin-bottom: 2rem;
         @media(max-width: $r_tab) {
             margin-top: 4rem;
             margin-bottom: 0;
-        }  
+        }
+        @media(max-width: $r_mob_360) {
+            font-size: 4.25rem;
+            margin-top: 2.5rem;
+        }   
     }
     &-social {
         list-style-type: none;
@@ -1435,6 +1787,10 @@ body {
             opacity: .8;
             transition: .2s;
             transform: scale(1);
+            @media(max-width: $r_mob_360) {
+                width: 6.2rem;
+                height: 6.2rem;
+            } 
             &:hover {
                 opacity: 1;
                 transform: scale(1.1);  
@@ -1443,14 +1799,23 @@ body {
         &__vk {
             background-image: url(../images/vk.svg);
             background-size: 2.3rem;
+            @media(max-width: $r_mob_360) {
+                background-size: 3rem;
+            } 
         }
         &__inst {
             background-image: url(../images/instagram.svg);
             background-size: 1.8rem;
+            @media(max-width: $r_mob_360) {
+                background-size: 2rem;
+            } 
         }
         &__fb {
             background-image: url(../images/facebook.svg);
             background-size: 1.8rem;
+            @media(max-width: $r_mob_360) {
+                background-size: 2rem;
+            } 
         }
 
     }
