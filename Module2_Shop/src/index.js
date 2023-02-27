@@ -52,7 +52,7 @@ var swiper = new Swiper(".trendsSwiper", {
       nextEl: ".swiper-button-next",
       prevEl: ".swiper-button-prev",
     },
-        breakpoints: {
+    breakpoints: {
       320: {
         slidesPerView: 1,
         slidesPerGroup: 1
@@ -67,4 +67,30 @@ var swiper = new Swiper(".trendsSwiper", {
       }
     },
     modules: [Navigation, Pagination],
-}); 
+});
+
+var swiper = new Swiper(".categotySwiper", {
+  slidesPerView: 3,
+  spaceBetween: 30,
+  slidesPerGroup: 3,
+  loop: true,
+  loopFillGroupWithBlank: true,
+  breakpoints: {
+    320: {
+      slidesPerView: 2,
+      slidesPerGroup: 2
+    },
+    1050: {
+      slidesPerView: 3,
+      slidesPerGroup: 3
+    },
+    1050: {
+      slidesPerView: 4,
+      slidesPerGroup: 4
+    },
+    1280: {
+      slidesPerView: 5,
+      slidesPerGroup: 5
+    }
+  },
+});  

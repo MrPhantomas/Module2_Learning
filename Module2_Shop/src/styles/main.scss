@@ -699,26 +699,28 @@ body {
 .swiper {
     overflow: initial;
     &-slide {
-        border: 1px solid rgba($green, .4);
-        border-radius: 2rem;
-        padding: 3rem 3.7rem 3.8rem;
-        @media(max-width: $r_desc_hd) {
-            padding: 2rem 2.7rem 2.8rem;
-        } 
-        @media(max-width: $r_desc_1120) {
-            padding: 1rem 1.7rem 1.8rem;
-        } 
-        @media(max-width: $r_mob_500) {
-            padding: 1.5rem 2rem 2.5rem;
-        } 
-        box-sizing: border-box;
-        justify-content:space-between;
-        background-repeat: no-repeat;
-        background-size: cover;
-        position: relative;
-        z-index: 0;
-        box-shadow: none;
-        transition: $std-delay;
+        &_good {
+            border: 1px solid rgba($green, .4);
+            border-radius: 2rem;
+            padding: 3rem 3.7rem 3.8rem;
+            @media(max-width: $r_desc_hd) {
+                padding: 2rem 2.7rem 2.8rem;
+            } 
+            @media(max-width: $r_desc_1120) {
+                padding: 1rem 1.7rem 1.8rem;
+            } 
+            @media(max-width: $r_mob_500) {
+                padding: 1.5rem 2rem 2.5rem;
+            } 
+            box-sizing: border-box;
+            justify-content:space-between;
+            background-repeat: no-repeat;
+            background-size: cover;
+            position: relative;
+            z-index: 0;
+            box-shadow: none;
+            transition: $std-delay;
+        }
         &_white {
             height: 520px;
             display: flex;
@@ -921,6 +923,39 @@ body {
             display: flex;
             justify-content: space-between;
             align-items: center;
+        }
+        &_categoty {
+            flex-basis: 230px;
+            text-align: center;
+            @media(max-width: $r_tab) {
+                flex-basis: 170px;
+            }
+            @media(max-width: $r_mob_360) {
+                flex-basis: 110px;
+            }
+        }
+        &__categoryLink {
+            padding: 2.4rem 0;
+            border: 1px solid rgba($green, .5);
+            color: rgba($green, .5);
+            font-size: 1.8rem;
+            text-decoration: none;
+            border-radius: 4rem;
+            display: block;
+            transition: $std-delay;
+            &:hover {
+                border: 1px solid $orange;
+                color: $orange;
+            }
+            @media(max-width: $r_desc_1280) {
+                font-size: 1.6rem;
+            }
+            @media(max-width: $r_tab) {
+                padding: 2rem 0;
+            }
+            @media(max-width: $r_mob_360) {
+                font-size: 1.25rem;
+            }
         }
     }
     &-pagination {
@@ -1204,6 +1239,10 @@ body {
     }
 }
 
+.categotySwiper {
+    margin-bottom: 5rem;
+}
+
 .catalog {
     padding-top: 4.7rem;
     padding-bottom: 11rem;
@@ -1217,8 +1256,12 @@ body {
     &__text {
         margin-top: 3rem;
         margin-bottom: 9rem;
+        @media(max-width: $r_tab) {
+            margin-bottom: 5rem;
+        }
         @media(max-width: $r_mob_360) {
             margin-top: 2rem;
+            margin-bottom: 3rem;
         }
     }
     &__list {
