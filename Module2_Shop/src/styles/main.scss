@@ -257,6 +257,7 @@ body {
     z-index: 0;
     position: relative;
     padding-bottom: 18.7rem;
+    overflow: hidden;
     @media(max-width: $r_tab_900) {
         padding-bottom: 4rem;
     }   
@@ -1171,7 +1172,9 @@ body {
     padding: 0;
     margin: 0;
     gap: 2rem;
-    justify-content: center;
+    @media(max-width: $r_tab) {
+        justify-content: center;
+    }
     &__item {
         flex-basis: 230px;
         text-align: center;
@@ -1501,6 +1504,7 @@ body {
         display: flex;
         align-items: center;
         justify-content: space-between;
+        gap: 1rem;
         @media(max-width: $r_tab) {
             display: initial;
         } 
@@ -1679,18 +1683,23 @@ body {
 .footer {
     &__info {
         flex-basis: 66.5%;
+        display: flex;
+        justify-content: space-between;
         @media(max-width: $r_desc_hd) {
             flex-basis: 75%;
         }
         @media(max-width: $r_tab_900) {
             flex-basis: 80%;
         }  
-        display: flex;
-        justify-content: space-between;
         @media(max-width: $r_tab) {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        @media(max-width: $r_mob_400) {
             display: block;
             text-align: center;
-        } 
+        }  
     }
     &__box {
         padding-top: 8rem;
@@ -1706,7 +1715,7 @@ body {
     }
     &__logo {
         @media(max-width: $r_tab) {
-            margin: 0 auto 1rem;
+            margin: 0 auto 4.5rem;
         } 
     }
     &__list {
@@ -1714,7 +1723,7 @@ body {
         margin: 0;
         padding: 0;
         &_mobi {
-            @media(max-width: $r_tab) {
+            @media(max-width: $r_mob_400) {
                 display: flex;
                 gap: 2rem;
                 flex-direction: row;
@@ -1732,6 +1741,17 @@ body {
         margin-bottom: 1.6rem;
         &:last-child {
             margin-bottom: 0;
+        }
+    }
+    &__contact {
+        @media(max-width: $r_tab) {
+            display: flex;
+            justify-content: space-between;
+            gap: 1rem;
+            flex-grow: 1;
+        }
+        @media(max-width: $r_mob_400) {
+            display: block;
         }
     }
     &__link {
@@ -1756,8 +1776,11 @@ body {
         }
         @media(max-width: $r_tab) {
             margin-top: 4rem;
-            margin-bottom: 0;
+            margin-bottom: 1.5rem;
         }
+        @media(max-width: $r_mob_400) {
+            margin-bottom: 0;
+        } 
         @media(max-width: $r_mob_360) {
             font-size: 4.25rem;
             margin-top: 2.5rem;
@@ -1773,7 +1796,7 @@ body {
         @media(max-width: $r_tab) {
             margin-top: 4rem;
             justify-content: center;
-            gap: 3rem;
+            gap: 3.7rem;
         }  
         margin-bottom: 0;
         &__link {
@@ -1822,12 +1845,14 @@ body {
     &__text {
         display: flex;
         justify-content: space-between;
+        align-items: center;
+        color: rgba($green, .6);
         font-size: 1.6rem;
+        margin-bottom: 4rem;
+        margin-top: 4rem;
         @media(max-width: $r_desc_1280) {
             font-size: 1.4rem;
         } 
-        color: rgba($green, .6);
-        margin-top: 5.8rem;
         @media(max-width: $r_tab) {
             display: block;
             text-align: center;
