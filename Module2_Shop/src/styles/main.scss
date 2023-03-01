@@ -827,7 +827,7 @@ body {
 }
 
 .swiper {
-    overflow: initial;
+    overflow: hidden;
     &-slide {
         &_good {
             border: 1px solid rgba($green, .4);
@@ -1063,6 +1063,7 @@ body {
             @media(max-width: $r_mob_360) {
                 flex-basis: 110px;
             }
+            z-index: 0;
         }
         &__categoryLink {
             padding: 2.4rem 0;
