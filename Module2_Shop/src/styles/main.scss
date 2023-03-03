@@ -44,6 +44,7 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     overflow-x: hidden;
+    background-position-x: center;
 }
 
 .header {
@@ -326,6 +327,7 @@ body {
     margin: 0 auto;
     padding-left: 15px;
     padding-right: 15px;
+    overflow: hidden;
     @media(max-width: $r_tab) {
         max-width: 600px;
     } 
@@ -827,7 +829,7 @@ body {
 }
 
 .swiper {
-    overflow: hidden;
+    overflow: initial;
     &-slide {
         &_good {
             border: 1px solid rgba($green, .4);
@@ -1372,6 +1374,7 @@ body {
 
 .categotySwiper {
     margin-bottom: 5rem;
+    overflow: hidden;
 }
 
 .catalog {
